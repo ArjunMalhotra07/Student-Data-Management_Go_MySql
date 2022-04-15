@@ -1,12 +1,12 @@
 package main
 
 import (
+	// "01StudentData/routes"
 	"database/sql"
 	"fmt"
 	"log"
 	"os"
 
-	"github.com/ArjunMalhotra07/studentData.git/routes"
 	"github.com/gin-gonic/gin"
 	"github.com/go-sql-driver/mysql"
 )
@@ -52,12 +52,12 @@ func main() {
 	f("5  City")
 	f("6  Students Id")
 	f("7  Every Student")
-	route := gin.Default()
-	route.GET("/everyStudent", routes.Greet())
-
 	var i int
 	fmt.Scan(&i)
 	calls(i)
+	route := gin.Default()
+	route.GET("/everyStudent", Greet)
+	route.Run("localhost:8080")
 
 }
 
