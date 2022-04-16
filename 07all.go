@@ -13,7 +13,7 @@ func all() ([]StudentData, error) {
 
 	for rows.Next() {
 		var alb StudentData
-		if err := rows.Scan(&alb.Id, &alb.Cgpa, &alb.StudentId, &alb.FatherName, &alb.MotherName, &alb.StudentName, &alb.City); err != nil {
+		if err := rows.Scan(&alb.StudentId, &alb.StudentName, &alb.FatherName, &alb.MotherName, &alb.Cgpa, &alb.City); err != nil {
 			return nil, errors.New("error2: empty database")
 		}
 		students = append(students, alb)

@@ -6,35 +6,24 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-// type mssg struct {
-// 	Message string `json:"message"`
-// }
-
-// var messages = []mssg{
-// 	{Message: "hello"},
-// }
-
-func Greet(c *gin.Context) {
+func getStudents(c *gin.Context) {
 
 	var students []StudentData
-
 	rows, err := db.Query("SELECT * FROM student_Data")
 
 	if err != nil {
 		return
 	}
 	defer rows.Close()
-
 	for rows.Next() {
-		var alb StudentData
-		if err := rows.Scan(&alb.Id, &alb.Cgpa, &alb.StudentId, &alb.FatherName, &alb.MotherName, &alb.StudentName, &alb.City); err != nil {
+		var student StudentData
+		if err := rows.Scan(&student.StudentId, &student.StudentName, &student.FatherName, &student.MotherName, &student.Cgpa, &student.City); err != nil {
 			return
 		}
-		students = append(students, alb)
+		students = append(students, student)
 	}
 	if err := rows.Err(); err != nil {
 		return
 	}
-
 	c.IndentedJSON(http.StatusOK, students)
 }

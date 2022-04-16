@@ -9,36 +9,40 @@ import (
 
 	"github.com/gin-gonic/gin"
 	"github.com/go-sql-driver/mysql"
+	_ "github.com/go-sql-driver/mysql"
 )
 
 var db *sql.DB
 
 type StudentData struct {
-	Id, Cgpa int64
-	StudentId,
-	FatherName,
-	MotherName, StudentName,
-	City string
+	StudentId   int64
+	StudentName string
+	FatherName  string
+	MotherName  string
+	Cgpa        float64
+	City        string
 }
 
 func main() {
 	f := fmt.Println
-	// Capture connection properties.
+
+	//  Capture connection properties.
 	cfg := mysql.Config{
 		User:                 os.Getenv("DBUSER"),
 		Passwd:               os.Getenv("DBPASS"),
 		Net:                  "tcp",
 		Addr:                 "127.0.0.1:3306",
-		DBName:               "studentInformation",
+		DBName:               "studentInfo",
 		AllowNativePasswords: true,
 	}
+	db, err := sql.Open("mysql", cfg.FormatDSN())
+
 	// Get a database handle.
-	var err error
-	db, err = sql.Open("mysql", cfg.FormatDSN())
+
 	if err != nil {
 		log.Fatal(err)
 	}
-
+	defer db.Close()
 	pingErr := db.Ping()
 	if pingErr != nil {
 		log.Fatal(pingErr)
@@ -56,7 +60,8 @@ func main() {
 	fmt.Scan(&i)
 	calls(i)
 	route := gin.Default()
-	route.GET("/everyStudent", Greet)
+	route.GET("/everyStudent", getStudents)
+	route.POST("/everyStudent", postStudents)
 	route.Run("localhost:8080")
 
 }
