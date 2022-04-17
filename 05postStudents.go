@@ -13,8 +13,6 @@ func postStudents(c *gin.Context) {
 		return
 	}
 
-	// fmt.Println(newStudent)
-
 	_, err := db.Exec(`INSERT INTO 
 	student_Data(studentId, studentName, fatherName, motherName, cgpa, city) 
 	VALUES (?,?,?,?,?,?)`,
