@@ -10,7 +10,6 @@ func getStudents(c *gin.Context) {
 
 	var students []StudentData
 	rows, err := db.Query("SELECT * FROM student_Data")
-
 	if err != nil {
 		return
 	}
