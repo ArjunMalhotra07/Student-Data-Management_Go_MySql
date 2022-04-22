@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -10,17 +11,21 @@ func searchByColumn(c *gin.Context) {
 	var searchData StudentData
 	var students []StudentData
 	if err1 := c.BindJSON(&searchData); err1 != nil {
+		c.AbortWithStatusJSON(http.StatusBadRequest,
+			gin.H{
+				"error":   "VALIDATEERR-1",
+				"message": "Invalid inputs. Please check your inputs"})
 		return
 	}
 
 	rows, err := db.Query(
 		`SELECT * FROM student_Data
 		WHERE studentName = ? 
-		OR city = ?
-		OR fatherName = ?
-		OR motherName = ?
-		OR cgpa = ?
-		OR studentId = ?`, searchData.StudentName, searchData.City, searchData.FatherName, searchData.MotherName, searchData.Cgpa, searchData.StudentId)
+		AND city = ?
+		AND fatherName = ?
+		AND motherName = ?
+		AND cgpa = ?
+		AND studentId = ?`, searchData.StudentName, searchData.City, searchData.FatherName, searchData.MotherName, searchData.Cgpa, searchData.StudentId)
 	if err != nil {
 		return
 	}
@@ -35,6 +40,8 @@ func searchByColumn(c *gin.Context) {
 	if err := rows.Err(); err != nil {
 		return
 	}
+	x := searchData.Cgpa
+	fmt.Println(x)
 	c.IndentedJSON(http.StatusOK, students)
 	// c.IndentedJSON(http.StatusOK, searchData.FatherName)
 	// c.IndentedJSON(http.StatusOK, searchData)
