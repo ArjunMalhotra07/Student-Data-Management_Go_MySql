@@ -48,6 +48,7 @@ func calls(i int) {
 		log.Fatal(err2)
 	}
 	f()
+	f("Found : ")
 	for i := 0; i < len(students); i++ {
 		f(students[i])
 	}
