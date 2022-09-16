@@ -1,0 +1,185 @@
+export DBUSER=aman;
+export DBPASS=Mysql_Witcher7%;
+go run .
+
+source /home/aman/Desktop/arjun/go_projects/01StudentData/create-tables.mysql
+
+mysql -u aman -p
+Mysql_Witcher7%
+
+create databse xyz;
+show databases;
+use xyz;
+show tables;
+
+DATABASE NAME = studentInfo
+table name = student_Data
+
+
+
+mysql> CREATE TABLE student_Data (
+    ->   id         INT AUTO_INCREMENT NOT NULL,
+    ->   studentId      VARCHAR(128) NOT NULL,
+    ->   studentName      VARCHAR(128) NOT NULL,
+    ->   fatherName     VARCHAR(255) NOT NULL,
+    ->   motherName     VARCHAR(255) NOT NULL,
+    ->   cgpa      DECIMAL(5,2) NOT NULL,
+    ->   city      VARCHAR(255) NOT NULL,
+    ->   PRIMARY KEY (`id`)
+    -> );
+
+
+INSERT INTO student_Data 
+      (studentId, studentName, fatherName, motherName, cgpa, city)
+    VALUES
+      ('2021010012673',   'Rohan',     'Pushpa',  'Seema', 6.9, 'Kapurthala'),
+      ('2021010012674',   'Ronit',     'Mannu',   'Manvi', 7.1, 'Amritsar'),
+      ('2021010012675',  'Keerti',    'Prashar', 'Dhani', 4.9, 'Jalandhar'),
+      ('2021010012676',   'Keerat Pal','Sukhwinder Singh','Pyar Kaur', 3.8, 'Subhanpur');
+
+
+SELECT * FROM student_Data WHERE motherName LIKE '%yar K%';
+
+
+mysql> select * from student_Data WHERE cgpa < 5.0;
+
++----+---------------+-------------+------------------+------------+------+-----------+
+| id | studentId     | studentName | fatherName       | motherName | cgpa | city      |
++----+---------------+-------------+------------------+------------+------+-----------+
+|  3 | 2021010012675 | Keerti      | Prashar          | Dhani      | 4.90 | Jalandhar |
+|  4 | 2021010012676 | Keerat Pal  | Sukhwinder Singh | Pyar Kaur  | 3.80 | Subhanpur |
++----+---------------+-------------+------------------+------------+------+-----------+
+
+
+
+
+SELECT DATA_TYPE  
+    FROM INFORMATION_SCHEMA.COLUMNS  
+    WHERE TABLE_NAME   = 'student_Data' AND
+    COLUMN_NAME  = 'studentName';
+
+
+POST  TEST_EXAMPLES : 
+[
+    {
+        "StudentId": 2021010012673,
+        "StudentName": "Rohan",
+        "FatherName": "Pushpa",
+        "MotherName": "Seema",
+        "Cgpa": 6.9,
+        "City": "Kapurthala"
+    },
+    {
+        "StudentId": 2021010012674,
+        "StudentName": "Ronit",
+        "FatherName": "Mannu",
+        "MotherName": "Manvi",
+        "Cgpa": 7.1,
+        "City": "Amritsar"
+    },
+    {
+        "StudentId": 2021010012675,
+        "StudentName": "Keerti",
+        "FatherName": "Prashar",
+        "MotherName": "Dhani",
+        "Cgpa": 4.9,
+        "City": "Jalandhar"
+    },
+    {
+        "StudentId": 2021010012676,
+        "StudentName": "Keerat Pal",
+        "FatherName": "Sukhwinder Singh",
+        "MotherName": "Pyar Kaur",
+        "Cgpa": 3.8,
+        "City": "Subhanpur"
+    },
+    {
+        "StudentId": 2021010012679,
+        "StudentName": "Poorvi",
+        "FatherName": "Simran",
+        "MotherName": "Janvi",
+        "Cgpa": 8.3,
+        "City": "Phagwara"
+    },
+    {
+        "StudentId": 2021010012680,
+        "StudentName": "Poorva",
+        "FatherName": "Jignesh",
+        "MotherName": "Janvi",
+        "Cgpa": 6.3,
+        "City": "Phagwara"
+    },
+    {
+        "StudentId": 2021010012693,
+        "StudentName": "Mahajn",
+        "FatherName": "Jot",
+        "MotherName": "Simi",
+        "Cgpa": 8.3,
+        "City": "Ludhiana"
+    },
+    {
+        "StudentId": 2021010012693,
+        "StudentName": "Deep",
+        "FatherName": "Jot",
+        "MotherName": "Simi",
+        "Cgpa": 8.3,
+        "City": "Ludhiana"
+    },
+    {
+        "StudentId": 2021010012693,
+        "StudentName": "Mallu",
+        "FatherName": "Dhongi",
+        "MotherName": "Amita",
+        "Cgpa": 8.3,
+        "City": "Peshawar"
+    },
+    {
+        "StudentId": 2021010012715,
+        "StudentName": "Meena",
+        "FatherName": "Chinku",
+        "MotherName": "Pinky",
+        "Cgpa": 6.9,
+        "City": "Lahore"
+    },
+    {
+        "StudentId": 2021010012715,
+        "StudentName": "Seema",
+        "FatherName": "Timmy",
+        "MotherName": "Minky",
+        "Cgpa": 6.9,
+        "City": "Delhi"
+    },
+    {
+        "StudentId": 2021010012756,
+        "StudentName": "Tim Hortons",
+        "FatherName": "Maverick",
+        "MotherName": "Nimo",
+        "Cgpa": 6.9,
+        "City": "Sultanpur"
+    },
+    {
+        "StudentId": 2021010012845,
+        "StudentName": "Geralt",
+        "FatherName": "Korin",
+        "MotherName": "Visenna",
+        "Cgpa": 7.3,
+        "City": "Kaer Morhan"
+    },
+    {
+        "StudentId": 2021010012710,
+        "StudentName": "Yenefer",
+        "FatherName": "Vizimir",
+        "MotherName": "Pontar",
+        "Cgpa": 7.3,
+        "City": "Vengerberg"
+    }
+]
+
+{
+        "StudentId": 202101001271,
+        "StudentName": "Ciri",
+        "FatherName": "Duny",
+        "MotherName": "Pavetta",
+        "Cgpa": 9.1,
+        "City": "Cintra"
+    }

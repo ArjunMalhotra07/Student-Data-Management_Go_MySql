@@ -5,10 +5,8 @@ import (
 	"database/sql"
 	"fmt"
 	"log"
-	"os"
 
 	"github.com/gin-gonic/gin"
-	"github.com/go-sql-driver/mysql"
 	_ "github.com/go-sql-driver/mysql"
 )
 
@@ -25,7 +23,7 @@ type StudentData struct {
 
 func main() {
 	f := fmt.Println
-
+	/************************************************
 	//  Capture connection properties.
 	cfg := mysql.Config{
 		User:                 os.Getenv("DBUSER"),
@@ -36,9 +34,10 @@ func main() {
 		AllowNativePasswords: true,
 	}
 	db, err := sql.Open("mysql", cfg.FormatDSN())
-
+	*************************************************/
 	// Get a database handle.
-
+	var err error
+	db, err = sql.Open("mysql", "aman:Mysql_Witcher7%@tcp(127.0.0.1:3306)/studentInfo")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -56,56 +55,14 @@ func main() {
 	f("5  City")
 	f("6  Students Id")
 	f("7  Every Student")
+	f()
 	var i int
 	fmt.Scan(&i)
 	calls(i)
 	route := gin.Default()
 	route.GET("/everyStudent", getStudents)
 	route.POST("/everyStudent", postStudents)
-	route.Run("localhost:8080")
+	route.POST("/search", searchByColumn)
+	route.Run(":8081")
 
-}
-
-func calls(i int) {
-	f := fmt.Println
-	var err2 error
-	var students []StudentData
-	var s string
-	var cgpa int
-	if i == 1 {
-		f("Enter Fathers Name")
-		fmt.Scan(&s)
-		students, err2 = studentByFather(s)
-	} else if i == 2 {
-		f("Enter Mothers Name")
-		fmt.Scan(&s)
-		students, err2 = studentByMother(s)
-
-	} else if i == 3 {
-		f("Enter Student Name")
-		fmt.Scan(&s)
-		students, err2 = studentByName(s)
-	} else if i == 4 {
-		f("Enter CGPA ")
-		fmt.Scan(&cgpa)
-		students, err2 = studentByCGPA(cgpa)
-		f("Students with CGPA less than ", cgpa)
-	} else if i == 5 {
-		f("Enter City Name")
-		fmt.Scan(&s)
-		students, err2 = studentByCity(s)
-	} else if i == 6 {
-		f("Enter Student ID")
-		fmt.Scan(&s)
-		students, err2 = studentById(s)
-	} else if i == 7 {
-		students, err2 = all()
-	}
-	if err2 != nil {
-		log.Fatal(err2)
-	}
-	f()
-	for i := 0; i < len(students); i++ {
-		f(students[i])
-	}
 }
