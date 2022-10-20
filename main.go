@@ -21,6 +21,19 @@ type StudentData struct {
 	City        string
 }
 
+type numbers struct {
+	A int64
+	B int64
+}
+type numbers1 struct {
+	A int64
+	B numbers2
+}
+type numbers2 struct {
+	D int64
+	C int64
+}
+
 func main() {
 	f := fmt.Println
 	/************************************************
@@ -63,6 +76,8 @@ func main() {
 	route.GET("/everyStudent", getStudents)
 	route.POST("/everyStudent", postStudents)
 	route.POST("/search", searchByColumn)
+	route.POST("/add", add)
+	route.POST("/add1", add1)
 	route.Run(":8081")
 
 }

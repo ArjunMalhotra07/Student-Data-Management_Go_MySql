@@ -21,11 +21,11 @@ func searchByColumn(c *gin.Context) {
 	rows, err := db.Query(
 		`SELECT * FROM student_Data
 		WHERE studentName = ? 
-		AND city = ?
-		AND fatherName = ?
-		AND motherName = ?
-		AND cgpa = ?
-		AND studentId = ?`, searchData.StudentName, searchData.City, searchData.FatherName, searchData.MotherName, searchData.Cgpa, searchData.StudentId)
+		OR city = ?
+		OR fatherName = ?
+		OR motherName = ?
+		OR cgpa = ?
+		OR studentId = ?`, searchData.StudentName, searchData.City, searchData.FatherName, searchData.MotherName, searchData.Cgpa, searchData.StudentId)
 	if err != nil {
 		return
 	}
