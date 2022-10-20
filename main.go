@@ -1,5 +1,6 @@
 package main
 
+// https://go.dev/doc/tutorial/database-access
 import (
 	// "01StudentData/routes"
 	"database/sql"
@@ -19,6 +20,20 @@ type StudentData struct {
 	MotherName  string
 	Cgpa        float64
 	City        string
+}
+type StudentDataUpdated struct {
+	StudentId          int64
+	StudentName        string
+	FatherName         string
+	MotherName         string
+	Cgpa               float64
+	City               string
+	StudentIdUpdated   int64
+	StudentNameUpdated string
+	FatherNameUpdated  string
+	MotherNameUpdated  string
+	CgpaUpdated        float64
+	CityUpdated        string
 }
 
 type numbers struct {
@@ -78,6 +93,8 @@ func main() {
 	route.POST("/search", searchByColumn)
 	route.POST("/add", add)
 	route.POST("/add1", add1)
+	route.DELETE("/remove", deleteByColumn)
+	route.PUT("/update", updateByColumn)
 	route.Run(":8081")
 
 }
