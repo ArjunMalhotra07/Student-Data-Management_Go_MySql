@@ -4,7 +4,6 @@ package main
 import (
 	// "01StudentData/routes"
 	"database/sql"
-	"fmt"
 	"log"
 
 	"github.com/gin-gonic/gin"
@@ -54,7 +53,7 @@ type numbers2 struct {
 }
 
 func main() {
-	f := fmt.Println
+	// f := fmt.Println
 	/************************************************
 	//  Capture connection properties.
 	cfg := mysql.Config{
@@ -78,19 +77,19 @@ func main() {
 	if pingErr != nil {
 		log.Fatal(pingErr)
 	}
-	f("Connected!")
-	f("*** Press To Search Student Bio Data Using *** ")
-	f("1  Father's Name")
-	f("2  Mother's Name")
-	f("3  Students's Name")
-	f("4  CGPA")
-	f("5  City")
-	f("6  Students Id")
-	f("7  Every Student")
-	f()
-	var i int
-	fmt.Scan(&i)
-	calls(i)
+	// f("Connected!")
+	// f("*** Press To Search Student Bio Data Using *** ")
+	// f("1  Father's Name")
+	// f("2  Mother's Name")
+	// f("3  Students's Name")
+	// f("4  CGPA")
+	// f("5  City")
+	// f("6  Students Id")
+	// f("7  Every Student")
+	// f()
+	// var i int
+	// fmt.Scan(&i)
+	// calls(i)
 	route := gin.Default()
 	route.GET("/everyStudent", getStudents)
 	route.POST("/everyStudent", postStudents)
