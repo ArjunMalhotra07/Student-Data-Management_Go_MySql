@@ -5,10 +5,8 @@ import (
 	// "01StudentData/routes"
 	"database/sql"
 	"log"
-	"os"
 
 	"github.com/gin-gonic/gin"
-	"github.com/go-sql-driver/mysql"
 	_ "github.com/go-sql-driver/mysql"
 )
 
@@ -57,7 +55,7 @@ type numbers2 struct {
 func main() {
 	// f := fmt.Println
 	//  Capture connection properties.
-	cfg := mysql.Config{
+	/*cfg := mysql.Config{
 		User:                 os.Getenv("DBUSER"),
 		Passwd:               os.Getenv("DBPASS"),
 		Net:                  "tcp",
@@ -65,10 +63,10 @@ func main() {
 		DBName:               "studentInfo",
 		AllowNativePasswords: true,
 	}
-	db, err := sql.Open("mysql", cfg.FormatDSN())
+	db, err := sql.Open("mysql", cfg.FormatDSN())*/
 	// Get a database handle.
-	// var err error
-	// db, err = sql.Open("mysql", "aman:Mysql_Witcher7%@tcp(127.0.0.1:3306)/studentInfo")
+	var err error
+	db, err = sql.Open("mysql", "aman:Mysql_Witcher7%@tcp(127.0.0.1:3306)/studentInfo")
 	if err != nil {
 		log.Fatal(err)
 	}
