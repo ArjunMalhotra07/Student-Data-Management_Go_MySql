@@ -25,7 +25,7 @@ func postStudents(c *gin.Context) {
 	if err != nil {
 		log.Fatal(err)
 	}
-	c.IndentedJSON(200, "Successfully Added Entries")
+	c.IndentedJSON(200, "Successfully Added Student Data")
 }
 
 func add(c *gin.Context) {

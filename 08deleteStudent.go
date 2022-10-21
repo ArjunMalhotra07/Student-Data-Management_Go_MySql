@@ -7,7 +7,7 @@ import (
 )
 
 func deleteByColumn(c *gin.Context) {
-	var searchData StudentData
+	var searchData StudentID
 
 	if err1 := c.BindJSON(&searchData); err1 != nil {
 		c.AbortWithStatusJSON(http.StatusBadRequest,
@@ -21,12 +21,7 @@ func deleteByColumn(c *gin.Context) {
 		`DELETE FROM student_Data
 		WHERE 
 		studentId = ?
-		AND studentName = ? 
-		AND fatherName = ?
-		AND motherName = ?
-		AND cgpa = ?
-		AND city = ?
-		`, searchData.StudentId, searchData.StudentName, searchData.FatherName, searchData.MotherName, searchData.Cgpa, searchData.City)
+		`, searchData.StudentId)
 	if err != nil {
 		return
 	}

@@ -182,4 +182,21 @@ POST  TEST_EXAMPLES :
         "MotherName": "Pavetta",
         "Cgpa": 9.1,
         "City": "Cintra"
-    }
+}
+
+{
+	"StudentId"          : 8282,
+	"StudentName"        : "Arjun",
+	"FatherName"         : "Fn",
+	"MotherName"         : "mn",
+	"Cgpa"               : 7,
+	"City"               : "Kpt",
+    
+	"StudentIdUpdated"   : 2021010012674,
+	"StudentNameUpdated" : "Ronit",
+    "FatherNameUpdated"  : "Mannu",
+    "MotherNameUpdated"  : "Manvi",
+    "CgpaUpdated"        : 7.1,
+    "CityUpdated"        : "Chandigarh"
+	        
+}

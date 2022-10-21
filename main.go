@@ -21,6 +21,10 @@ type StudentData struct {
 	Cgpa        float64
 	City        string
 }
+
+type StudentID struct {
+	StudentId int64
+}
 type StudentDataUpdated struct {
 	StudentId          int64
 	StudentName        string
