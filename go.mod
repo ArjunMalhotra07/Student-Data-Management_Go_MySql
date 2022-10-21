@@ -1,4 +1,4 @@
-module studentData
+module github.com/ArjunMalhotra07/studentData
 
 go 1.17
 
