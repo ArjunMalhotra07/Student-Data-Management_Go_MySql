@@ -1,10 +1,16 @@
 package main
 
 import (
+	"fmt"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
 )
+
+type getStudentAPI struct {
+	message           string
+	everyStudentArray []StudentData
+}
 
 func getStudents(c *gin.Context) {
 
@@ -21,10 +27,21 @@ func getStudents(c *gin.Context) {
 		}
 		students = append(students, student)
 	}
+
+	var getStudentAPIObject getStudentAPI
+	getStudentAPIObject.everyStudentArray = students
+	getStudentAPIObject.message = "API success!"
+	fmt.Println(getStudentAPIObject)
+	fmt.Println("**************")
+	fmt.Println(students)
 	if err := rows.Err(); err != nil {
 		return
 	}
-	c.IndentedJSON(http.StatusOK, students)
+	c.IndentedJSON(http.StatusOK, gin.H{
+		"data":    students,
+		"message": "Success",
+	})
+
 }
 
 // func getStudents(c *gin.Context) {
