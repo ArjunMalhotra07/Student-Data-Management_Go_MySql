@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -31,9 +30,6 @@ func getStudents(c *gin.Context) {
 	var getStudentAPIObject getStudentAPI
 	getStudentAPIObject.everyStudentArray = students
 	getStudentAPIObject.message = "API success!"
-	fmt.Println(getStudentAPIObject)
-	fmt.Println("**************")
-	fmt.Println(students)
 	if err := rows.Err(); err != nil {
 		return
 	}
