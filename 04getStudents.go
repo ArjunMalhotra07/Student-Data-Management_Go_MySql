@@ -6,11 +6,6 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-type getStudentAPI struct {
-	message           string
-	everyStudentArray []StudentData
-}
-
 func getStudents(c *gin.Context) {
 
 	var students []StudentData
@@ -27,9 +22,6 @@ func getStudents(c *gin.Context) {
 		students = append(students, student)
 	}
 
-	var getStudentAPIObject getStudentAPI
-	getStudentAPIObject.everyStudentArray = students
-	getStudentAPIObject.message = "API success!"
 	if err := rows.Err(); err != nil {
 		return
 	}

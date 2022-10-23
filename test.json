@@ -1,0 +1,221 @@
+{
+    "message" : "hello",
+    "years" : [
+        {   
+            "year" : "2016",
+            "standards" : [
+                {
+                    "divison" : "6th",
+                    "sections" : [
+                        {
+                            "section" : "A",
+                            "teacher" : "Name",
+                            "students" :  [
+                                {
+                                    "StudentId": 2021010012673,
+                                    "StudentName": "Rohan",
+                                    "FatherName": "Pushpa",
+                                    "MotherName": "Seema",
+                                    "Cgpa": 6.9,
+                                    "City": "Kapurthala"
+                                },
+                                {
+                                    "StudentId": 2021010012674,
+                                    "StudentName": "Ronit",
+                                    "FatherName": "Mannu",
+                                    "MotherName": "Manvi",
+                                    "Cgpa": 7.1,
+                                    "City": "Amritsar"
+                                }
+                            ]
+                        },
+                        {
+                            "section" : "B",
+                            "teacher" : "Name",
+                            "students" :  [
+                                {
+                                    "StudentId": 2021010012675,
+                                    "StudentName": "Keerti",
+                                    "FatherName": "Prashar",
+                                    "MotherName": "Dhani",
+                                    "Cgpa": 4.9,
+                                    "City": "Jalandhar"
+                                },
+                                {
+                                    "StudentId": 2021010012676,
+                                    "StudentName": "Keerat Pal",
+                                    "FatherName": "Sukhwinder Singh",
+                                    "MotherName": "Pyar Kaur",
+                                    "Cgpa": 3.8,
+                                    "City": "Subhanpur"
+                                }
+                            ]
+                        }
+                    ] 
+                
+                },
+            
+                {
+                    "divison" : "7th",
+                    "sections" : [
+                        {
+                            "section" : "A",
+                            "teacher" : "Name",
+                            "students" :  [
+                                {
+                                    "StudentId": 2021010012679,
+                                    "StudentName": "Poorvi",
+                                    "FatherName": "Simran",
+                                    "MotherName": "Janvi",
+                                    "Cgpa": 8.3,
+                                    "City": "Phagwara"
+                                },
+                                {
+                                    "StudentId": 2021010012680,
+                                    "StudentName": "Poorva",
+                                    "FatherName": "Jignesh",
+                                    "MotherName": "Janvi",
+                                    "Cgpa": 6.3,
+                                    "City": "Phagwara"
+                                }
+                            ]
+                        },
+                        {
+                            "section" : "B",
+                            "teacher" : "Name",
+                            "students" :  [
+                                {
+                                    "StudentId": 2021010012693,
+                                    "StudentName": "Mahajn",
+                                    "FatherName": "Jot",
+                                    "MotherName": "Simi",
+                                    "Cgpa": 8.3,
+                                    "City": "Ludhiana"
+                                },
+                                {
+                                    "StudentId": 2021010012693,
+                                    "StudentName": "Deep",
+                                    "FatherName": "Jot",
+                                    "MotherName": "Simi",
+                                    "Cgpa": 8.3,
+                                    "City": "Ludhiana"
+                                }
+                            ]
+                        }
+                    ] 
+                    
+                }
+            
+            ]
+        },
+        {   
+            "year" : "2017",
+            "standards" : [
+                {
+                    "divison" : "6th",
+                    "sections" : [
+                        {
+                            "section" : "A",
+                            "teacher" : "Name",
+                            "students" :  [
+                                {
+                                    "StudentId": 2021010012710,
+                                    "StudentName": "Yenefer",
+                                    "FatherName": "Vizimir",
+                                    "MotherName": "Pontar",
+                                    "Cgpa": 7.3,
+                                    "City": "vengerberg"
+                                },
+                                {
+                                    "StudentId": 202101001271,
+                                    "StudentName": "Ciri",
+                                    "FatherName": "Duny",
+                                    "MotherName": "Pavetta",
+                                    "Cgpa": 9.1,
+                                    "City": "Cintra"
+                                }
+                            ]
+                        },
+                        {
+                            "section" : "B",
+                            "teacher" : "Name",
+                            "students" :  [
+                                {
+                                    "StudentId": 2021010012756,
+                                    "StudentName": "Tim Hortons",
+                                    "FatherName": "Maverick",
+                                    "MotherName": "Nimo",
+                                    "Cgpa": 6.9,
+                                    "City": "Sultanpur"
+                                },
+                                {
+                                    "StudentId": 2021010012845,
+                                    "StudentName": "Geralt",
+                                    "FatherName": "Korin",
+                                    "MotherName": "Visenna",
+                                    "Cgpa": 7.3,
+                                    "City": "Kaer Morhan"
+                                }
+                            ]
+                        }
+                    ] 
+                
+                },
+            
+                {
+                    "divison" : "7th",
+                    "sections" : [
+                        {
+                            "section" : "A",
+                            "teacher" : "Name",
+                            "students" :  [
+                                {
+                                    "StudentId": 2021010012715,
+                                    "StudentName": "Meena",
+                                    "FatherName": "Chinku",
+                                    "MotherName": "Pinky",
+                                    "Cgpa": 6.9,
+                                    "City": "Lahore"
+                                },
+                                {
+                                    "StudentId": 2021010012715,
+                                    "StudentName": "Seema",
+                                    "FatherName": "Timmy",
+                                    "MotherName": "Minky",
+                                    "Cgpa": 6.9,
+                                    "City": "Delhi"
+                                }
+                            ]
+                        },
+                        {
+                            "section" : "B",
+                            "teacher" : "Name",
+                            "students" :  [
+                                {
+                                    "StudentId": 2021010012693,
+                                    "StudentName": "Deep",
+                                    "FatherName": "Jot",
+                                    "MotherName": "Simi",
+                                    "Cgpa": 8.3,
+                                    "City": "Ludhiana"
+                                },
+                                {
+                                    "StudentId": 2021010012693,
+                                    "StudentName": "Mallu",
+                                    "FatherName": "Dhongi",
+                                    "MotherName": "Amita",
+                                    "Cgpa": 8.3,
+                                    "City": "Peshawar"
+                                }
+                            ]
+                        }
+                    ] 
+                    
+                }
+            
+            ]
+        }
+        
+        
+    ]
+}
