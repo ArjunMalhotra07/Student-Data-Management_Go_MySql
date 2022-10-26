@@ -1,4 +1,4 @@
-package main
+package api
 
 import (
 	"net/http"
@@ -6,7 +6,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func getStudents(c *gin.Context) {
+func GetStudents(c *gin.Context) {
 
 	var students []StudentData
 	rows, err := db.Query("SELECT * FROM student_Data")

@@ -2,10 +2,10 @@ package main
 
 // https://go.dev/doc/tutorial/database-access
 import (
-	// "01StudentData/routes"
 	"database/sql"
 	"log"
 
+	"github.com/ArjunMalhotra07/studentData/api"
 	"github.com/gin-gonic/gin"
 	_ "github.com/go-sql-driver/mysql"
 )
@@ -77,7 +77,7 @@ func main() {
 	}
 
 	route := gin.Default()
-	route.GET("/everyStudent", getStudents)
+	route.GET("/everyStudent", api.GetStudents)
 	route.POST("/everyStudent", postStudents)
 	route.POST("/search", searchByColumn)
 	route.POST("/add", add)
