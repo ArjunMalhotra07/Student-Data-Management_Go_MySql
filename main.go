@@ -5,7 +5,6 @@ import (
 	"database/sql"
 	"log"
 
-	"github.com/ArjunMalhotra07/studentData/api"
 	"github.com/gin-gonic/gin"
 	_ "github.com/go-sql-driver/mysql"
 )
@@ -77,7 +76,8 @@ func main() {
 	}
 
 	route := gin.Default()
-	route.GET("/everyStudent", api.GetStudents)
+	route.GET("/everyStudent", GetStudents)
+
 	route.POST("/everyStudent", postStudents)
 	route.POST("/search", searchByColumn)
 	route.POST("/add", add)
